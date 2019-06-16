@@ -4,7 +4,7 @@ import java.util.TreeMap;
 
 public class BMICalculator implements Calculator<Double> {
     private double bmi;
-    private static final SortedMap<Double, BMIResult> bmiResults = new TreeMap<>();
+    private static final TreeMap<Double, BMIResult> bmiResults = new TreeMap<>();
 
     static {
         bmiResults.put(18.5, BMIResult.UNDERWEIGHT);
@@ -21,11 +21,6 @@ public class BMICalculator implements Calculator<Double> {
     }
 
     public String interpret() {
-        for (Map.Entry<Double, BMIResult> entry : bmiResults.entrySet()) {
-            if (bmi < entry.getKey()) {
-                return entry.getValue().toString();
-            }
-        }
-        throw new IllegalArgumentException("Should never happen");
+        return bmiResults.higherEntry(bmi).getValue().toString();
     }
 }
