@@ -2,11 +2,11 @@
 This simple aplication computes Body Mass Index.
 
 ## Java version:
-This project is written in Java version ...
+This project is written in Java version 11
 
 ## Running:
-In oder to run the program you have to...
+In order to run the program you have to clone and compile it.
 
 ## Testing:
 
-In oder to the program you have to...
+In order to test the program you have to run mvn test.
